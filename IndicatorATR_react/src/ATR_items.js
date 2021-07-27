@@ -1,15 +1,19 @@
 const CardItems = [
     {
-        label: 'Exercise'
+        label: 'Exercise',
+        value: '1'
     },
     {
-        label: 'Reducing stress'
+        label: 'Reducing stress',
+        value: '2'
     },
     {
-        label: 'A balanced diet'
+        label: 'A balanced diet',
+        value: '3'
     },
     {
-        label: 'Losing weight' 
+        label: 'Losing weight',
+        value: '4' 
     }
 ]
 

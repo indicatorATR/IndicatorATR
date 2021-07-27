@@ -8,7 +8,7 @@ class App extends React.Component {
     return (
       <main>
         <Switch>
-          <Route path="/" component={ATR_Page} exact/>  
+          <Route path="/" component={ATR_Page} exact/> 
         </Switch>
       </main>
         );
