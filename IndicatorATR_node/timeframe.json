@@ -1,0 +1,30 @@
+[
+    {
+      "time": "1 hour",
+      "id" : 0
+    },
+    {
+        "time": "2 hours",
+        "id" : 1
+    },
+    {
+        "time": "4 hours",
+        "id" : 2
+    },
+    {
+        "time": "12 hours",
+        "id" : 3
+    },
+    {
+        "time": "1 day",
+        "id" : 4
+    },
+    {
+        "time": "1 week",
+        "id" : 5
+    },
+    {
+        "time": "1 month",
+        "id" : 6
+    }
+  ]

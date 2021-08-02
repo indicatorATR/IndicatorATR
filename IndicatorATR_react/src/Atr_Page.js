@@ -4,6 +4,7 @@ import CardItems  from './ATR_items.js';
 import TimeFrame_item  from './TimeFrame_item.js';
 import "./Atr_Page.css"
 
+
 export default function AtrPage() {
     const [carditems, setCarditems] = useState({});
     const [time, setTime]= useState({});
