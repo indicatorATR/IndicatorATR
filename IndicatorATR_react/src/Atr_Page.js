@@ -6,16 +6,30 @@ import "./Atr_Page.css"
 
 
 export default function AtrPage() {
-    const [carditems, setCarditems] = useState({});
+    const [coinpair, setCoinpair] = useState({});
     const [time, setTime]= useState({});
+
+    // async function fetchData() {
+    //   const res = await fetch(`/`);
+    //   res
+    //     .json()
+    //     .then(res => setCarditems(res))
+    //     .then(res => setTime(res))
+    // }
+  
+    // useEffect(() => {
+    //   fetchData();
+    // });
+
+    
     return (
       <div className="form-style col-4">
         <form> 
-          <label id="aria-label" htmlFor="aria-example-input">
-            Select An Option
+          <label id="aria-label" className="mb-3" htmlFor="aria-example-input">
+            Select An CoinPair
           </label>
           <Select
-            onChange={setCarditems}
+            onChange={setCoinpair}
             name="colors"
             options={CardItems}
             className="basic-multi-select"
@@ -23,7 +37,7 @@ export default function AtrPage() {
             placeholder="Select Coin Pair"
           />
           <label id="aria-label" className="mb-3" htmlFor="aria-example-input">
-            Select An Option
+          Select An TimeFrame
           </label>
           <Select
             onChange={setTime}

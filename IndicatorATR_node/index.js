@@ -1,27 +1,28 @@
-const express = require('express')
-const app = express();
-const port = 8000;
-const Binance = require('node-binance-api');
-const GeneralDb = require('./GeneralDb.js');
+var express = require('express');
+var app = express();
+var port = 8000;
+var Binance = require('node-binance-api');
+var GeneralDb = require('./GeneralDb.js');
 
-const binance= new Binance().options({
+var binance= new Binance().options({
   APIKEY:  'weaXzsTzGI1hyycD0CrQuaeHjHgJCZqv6lLQHwxpyngT2Up3pOmJjQRB9VaQdFf7jhfaynzx',
   APISECRET: 'CPfdPNLByKI3ZP11IJEatIabDstZhi4baUxSMmp5onNdveJv7q66HYAcyI3vjN4m'
-})
+});
 
 async function CoinFunc(){
   await binance.bookTickers((error, ticker) => {
-  let coins=ticker
-  for (let i = 0; i < coins.length; i++) {
-    let Symbol=JSON.parse('[{"symbol":'+JSON.stringify(coins[i]["symbol"])+'}]')
+  let coins=ticker;
+  for (let i = 0; i < 100; i++) {
+    let Symbol = JSON.parse('[{"symbol":' + JSON.stringify(coins[i]["symbol"]) + '}]');
     GeneralDb.MongFunc(Symbol)
-    }
+    } 
   });
 }
 
 CoinFunc()
 
-// app.get('/', ATR.ATRPage)
+app.get('/', GeneralDb.ATRPage)
+// app.post('/register_page',registerForm.RegisterFormHandler)
 
 // var candle = binance.candlesticks("BNBBTC", "5m", (error, ticks, symbol) => {
 //   console.info("candlesticks()", ticks);
