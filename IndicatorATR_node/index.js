@@ -21,15 +21,18 @@ async function CoinFunc(){
 
 CoinFunc()
 
-app.get('/', GeneralDb.ATRPage)
+app.get('/AtrPage', GeneralDb.ATRPage)
 // app.post('/register_page',registerForm.RegisterFormHandler)
 
-// var candle = binance.candlesticks("BNBBTC", "5m", (error, ticks, symbol) => {
-//   console.info("candlesticks()", ticks);
-//   let last_tick = ticks[ticks.length - 1];
-//   let [time, open, high, low, close, volume, closeTime, assetVolume, trades, buyBaseVolume, buyAssetVolume, ignored] = last_tick;
-//   console.info(symbol+" last close: "+close);
-// }, {limit: 500, endTime: 1514764800000});
+
+async function CandleStick(coin,time){
+  await binance.candlesticks(coin, time, (error, ticks, symbol) => {
+  console.info("candlesticks()", ticks);
+  let last_tick = ticks[ticks.length - 1];
+  let [time, open, high, low, close, closeTime, ignored] = last_tick;
+  console.info(symbol+" last close: "+close);
+  }, {limit: 500, endTime: 1514764800000});
+}
 
 
 
